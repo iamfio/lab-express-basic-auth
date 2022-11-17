@@ -1,15 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{title}}</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
+
+    <header>
+      <nav id="to-right">
+        <a href="/">Home</a>
+        {{#if session.user}}
+          <a href="/dashboard">Dashboard</a>
+          <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+          </form>
+        {{else}}
+          <a href="/signup">Signup</a>
+          <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
 
     {{{body}}}
 

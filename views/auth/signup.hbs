@@ -1,0 +1,26 @@
+<h1>Registration</h1>
+
+{{#if errorMessage}}
+  <p class="error">{{errorMessage}}</p>
+{{/if}}
+<form action="/signup" method="post">
+  <div>
+    <label for="username">username:
+      <input type="text" name="username" id="username" minlength="6" />
+    </label>
+  </div>
+  <div>
+    <label for="username">password:
+      <input
+        type="password"
+        name="password"
+        id="password"
+        minlength="4"
+        
+      />
+    </label>
+  </div>
+  <div>
+    <button type="submit">Signup</button>
+  </div>
+</form>
